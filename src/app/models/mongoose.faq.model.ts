@@ -24,4 +24,4 @@ faqSchema.methods.getTranslatedQuestion = function (lang: string): string {
     return this.question[lang as keyof typeof this.question] || this.question.en;
 };
 
-export const FAQ = model<IFAQ>('FAQ', faqSchema);
+export default model<IFAQ>('FAQ', faqSchema);
