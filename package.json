@@ -1,0 +1,39 @@
+{
+    "name": "bharatfd_hiring_backend",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "dev": "yarn prettier && nodemon src/server.ts --config nodemon.json",
+        "build": "tsc && copyfiles -u 1 \"src/**/*.{css,html,ico,png,svg}\" dist/src/",
+        "start": "ts-node src/server.ts",
+        "preview": "node dist/server.js",
+        "prettier": "prettier --write \"src/**/*.ts\"",
+        "lint": "eslint"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "axios": "^1.7.9",
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.7",
+        "express": "^4.21.2",
+        "joi": "^17.13.3",
+        "mongoose": "^8.9.6",
+        "morgan": "^1.10.0",
+        "typescript": "^5.7.3"
+    },
+    "devDependencies": {
+        "@eslint/eslintrc": "^3.2.0",
+        "@types/cors": "^2.8.17",
+        "@types/express": "^5.0.0",
+        "@types/morgan": "^1.9.9",
+        "@types/node": "^22.13.0",
+        "eslint": "^9.19.0",
+        "eslint-config-prettier": "^10.0.1",
+        "nodemon": "^3.1.9",
+        "prettier": "^3.4.2",
+        "ts-node": "^10.9.2"
+    }
+}
