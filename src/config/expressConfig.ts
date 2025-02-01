@@ -1,10 +1,10 @@
 import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
+import customErrorHandler from '../app/handlers/CustomErrorHandler';
+import joiErrorHandler from '../app/handlers/JoiErrorHandler';
 import * as fs from 'fs/promises';
 import * as path from 'path';
-import joiErrorHandler from '../app/handlers/JoiErrorHandler';
-import customErrorHandler from '../app/handlers/CustomErrorHandler';
 
 const server = async () => {
     const app = express();
