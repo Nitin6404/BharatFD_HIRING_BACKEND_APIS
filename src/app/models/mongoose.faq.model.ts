@@ -1,14 +1,5 @@
-import { Schema, model, Document } from 'mongoose';
-
-export interface IFAQ extends Document {
-    question: {
-        en: string;
-        hi?: string;
-        bn?: string;
-    };
-    answer: string;
-    getTranslatedQuestion(lang: string): string;
-}
+import { Schema, model } from 'mongoose';
+import { IFAQ } from '../apis/faq/interfaces';
 
 const faqSchema = new Schema<IFAQ>({
     question: {
@@ -17,11 +8,12 @@ const faqSchema = new Schema<IFAQ>({
         bn: String,
     },
     answer: { type: String, required: true },
+    createdAt: { type: Date, default: Date.now },
 });
 
 // Dynamic translation getter
-faqSchema.methods.getTranslatedQuestion = function (lang: string): string {
+faqSchema.methods.getTranslatedQuestion = function(lang: string): string {
     return this.question[lang as keyof typeof this.question] || this.question.en;
 };
 
-export default model<IFAQ>('FAQ', faqSchema);
+export const FAQ = model<IFAQ>('FAQ', faqSchema);

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/BharatFD_Hiring_Backend.iml" filepath="$PROJECT_DIR$/.idea/BharatFD_Hiring_Backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../hiring-template/.idea/hiring-template.iml" filepath="$PROJECT_DIR$/../hiring-template/.idea/hiring-template.iml" />
     </modules>
   </component>
 </project>
